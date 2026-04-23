@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Fraunces opsz + variant defaults for a more characterful look */
+  .font-editorial {
+    font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 0;
+  }
+}
