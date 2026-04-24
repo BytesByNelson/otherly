@@ -1,6 +1,7 @@
 import { CountrySelect } from '../CountrySelect.jsx';
 import { ThemeToggle } from '../ThemeToggle.jsx';
 import { Tooltip, InfoDot } from '../Tooltip.jsx';
+import { CountryProfile } from '../CountryProfile.jsx';
 
 export function DashboardView({
   countries, selectedA, selectedB, setSelectedA, setSelectedB,
@@ -108,6 +109,29 @@ export function DashboardView({
                 ))}
               </div>
             </section>
+
+            {/* Country profiles */}
+            <CountryProfile
+              countryA={countryA}
+              countryB={countryB}
+              sectionLabel="country_profiles"
+              classes={{
+                section: 'mt-4 rounded-md border border-dash-grid bg-dash-panel',
+                toggle: 'w-full px-6 py-4 text-left hover:bg-dash-grid/30 transition-colors',
+                toggleLabel: 'font-mono text-[11px] uppercase tracking-[0.25em] text-dash-cyan',
+                toggleCount: 'ml-2 text-dash-dim',
+                toggleIcon: 'font-mono text-lg text-dash-cyan',
+                body: 'border-t border-dash-grid',
+                headerRow: 'grid grid-cols-[minmax(140px,200px)_1fr_1fr] gap-6 px-6 pt-5 pb-3 border-b border-dash-grid font-mono text-[10px] uppercase tracking-[0.25em] text-dash-dim',
+                rows: 'divide-y divide-dash-grid',
+                row: 'grid grid-cols-[minmax(140px,200px)_1fr_1fr] gap-6 px-6 py-4 items-start',
+                rowLabel: 'font-mono text-[10px] uppercase tracking-[0.25em] text-dash-dim pt-0.5',
+                rowValue: 'font-dashboard text-sm text-white/90 leading-snug',
+                noteText: 'font-mono text-[10px] text-dash-dim mt-1 italic',
+                tooltip: 'bg-dash-bg border border-dash-grid text-white/90',
+                infoDot: 'border-dash-dim text-dash-dim',
+              }}
+            />
           </>
         )}
 

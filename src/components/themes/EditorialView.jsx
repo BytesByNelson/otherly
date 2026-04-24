@@ -1,6 +1,7 @@
 import { CountrySelect } from '../CountrySelect.jsx';
 import { ThemeToggle } from '../ThemeToggle.jsx';
 import { Tooltip, InfoDot } from '../Tooltip.jsx';
+import { CountryProfile } from '../CountryProfile.jsx';
 import { METRICS_BY_KEY } from '../../lib/metrics.js';
 
 const fmtSigned = (n, fmt) => {
@@ -128,6 +129,29 @@ export function EditorialView({
                 ))}
               </div>
             </section>
+
+            {/* Country profiles — expandable dossiers */}
+            <CountryProfile
+              countryA={countryA}
+              countryB={countryB}
+              sectionLabel="§ Dossiers"
+              classes={{
+                section: 'border-t border-ink/20 py-10',
+                toggle: 'py-3 text-left font-editorial',
+                toggleLabel: 'italic text-sm tracking-[0.2em] uppercase text-ink/50',
+                toggleCount: 'ml-2 italic text-ink/40 not-italic',
+                toggleIcon: 'font-editorial text-2xl text-ink/60',
+                body: 'mt-8',
+                headerRow: 'grid grid-cols-[minmax(140px,200px)_1fr_1fr] gap-6 border-b-2 border-ink pb-3 mb-6 font-editorial italic text-xs tracking-[0.15em] uppercase text-ink/70',
+                rows: 'divide-y divide-ink/15',
+                row: 'grid grid-cols-[minmax(140px,200px)_1fr_1fr] gap-6 py-4 items-start',
+                rowLabel: 'font-editorial italic text-xs tracking-[0.15em] uppercase text-ink/50 pt-0.5',
+                rowValue: 'font-editorial text-base text-ink leading-snug',
+                noteText: 'font-editorial italic text-sm text-ink/60 mt-1.5',
+                tooltip: 'bg-ink text-cream not-italic',
+                infoDot: 'border-ink/50 text-ink/70',
+              }}
+            />
           </>
         )}
       </main>

@@ -1,6 +1,7 @@
 import { CountrySelect } from '../CountrySelect.jsx';
 import { ThemeToggle } from '../ThemeToggle.jsx';
 import { Tooltip, InfoDot } from '../Tooltip.jsx';
+import { CountryProfile } from '../CountryProfile.jsx';
 
 export function AtlasView({
   countries, selectedA, selectedB, setSelectedA, setSelectedB,
@@ -132,6 +133,40 @@ export function AtlasView({
                   ))}
                 </tbody>
               </table>
+            </section>
+
+            <DoubleRule />
+
+            {/* Section III — Gazetteer Particulars */}
+            <section className="py-10">
+              <CountryProfile
+                countryA={countryA}
+                countryB={countryB}
+                sectionLabel={
+                  <span className="flex items-baseline gap-5">
+                    <span className="font-atlas text-5xl text-atlas-oxblood font-light">III.</span>
+                    <span className="font-atlas text-3xl sm:text-4xl font-light tracking-wide" style={{ fontFeatureSettings: '"lnum"' }}>
+                      Gazetteer Particulars
+                    </span>
+                  </span>
+                }
+                classes={{
+                  section: '',
+                  toggle: 'w-full text-left py-2 hover:bg-atlas-ink/5 transition-colors',
+                  toggleLabel: '',
+                  toggleCount: 'ml-3 font-atlasBody italic text-atlas-ink/60 text-base',
+                  toggleIcon: 'font-atlas text-4xl text-atlas-oxblood font-light',
+                  body: 'mt-8',
+                  headerRow: 'grid grid-cols-[minmax(140px,200px)_1fr_1fr] gap-6 border-b-2 border-atlas-ink/40 pb-3 mb-2 font-atlas text-xs uppercase tracking-[0.25em] text-atlas-ink/70',
+                  rows: 'divide-y divide-atlas-ink/20',
+                  row: 'grid grid-cols-[minmax(140px,200px)_1fr_1fr] gap-6 py-4 items-start',
+                  rowLabel: 'font-atlas text-xs uppercase tracking-[0.25em] text-atlas-ink/60 pt-1',
+                  rowValue: 'font-atlasBody text-base text-atlas-ink leading-snug',
+                  noteText: 'font-atlasBody italic text-sm text-atlas-ink/60 mt-1.5',
+                  tooltip: 'bg-atlas-ink text-atlas-paper',
+                  infoDot: 'border-atlas-ink/60 text-atlas-ink/70',
+                }}
+              />
             </section>
           </>
         )}

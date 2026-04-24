@@ -1,6 +1,7 @@
 import { CountrySelect } from '../CountrySelect.jsx';
 import { ThemeToggle } from '../ThemeToggle.jsx';
 import { Tooltip, InfoDot } from '../Tooltip.jsx';
+import { CountryProfile } from '../CountryProfile.jsx';
 
 export function PlayfulView({
   countries, selectedA, selectedB, setSelectedA, setSelectedB,
@@ -137,6 +138,38 @@ export function PlayfulView({
                   <FunCard key={key} block={lens[key]} countryA={countryA} countryB={countryB} accent={i} />
                 ))}
               </div>
+            </section>
+
+            {/* Country profiles — a big expandable "get to know them" card */}
+            <section className="mt-8">
+              <CountryProfile
+                countryA={countryA}
+                countryB={countryB}
+                sectionLabel={
+                  <span className="inline-flex items-center gap-3">
+                    <span className="font-playful font-extrabold text-3xl bg-play-magenta text-white px-3 py-1 rotate-1 rounded-xl border-[3px] border-play-deep shadow-[3px_3px_0_0_theme(colors.play.deep)]">
+                      Meet them!
+                    </span>
+                    <span className="font-playful text-sm text-play-deep/70">get the full story</span>
+                  </span>
+                }
+                classes={{
+                  section: 'rounded-3xl border-[3px] border-play-deep bg-white p-6 shadow-[8px_8px_0_0_theme(colors.play.deep)]',
+                  toggle: 'w-full text-left',
+                  toggleLabel: '',
+                  toggleCount: 'hidden',
+                  toggleIcon: 'font-playful font-extrabold text-3xl bg-play-sun text-play-deep px-3 py-1 rounded-xl border-[3px] border-play-deep shadow-[3px_3px_0_0_theme(colors.play.deep)]',
+                  body: 'mt-6',
+                  headerRow: 'grid grid-cols-[minmax(120px,170px)_1fr_1fr] gap-4 border-b-2 border-play-deep pb-3 mb-2 font-playful text-xs uppercase tracking-[0.2em] text-play-deep',
+                  rows: 'divide-y-2 divide-play-deep/20',
+                  row: 'grid grid-cols-[minmax(120px,170px)_1fr_1fr] gap-4 py-4 items-start',
+                  rowLabel: 'font-playful text-xs uppercase tracking-[0.2em] text-play-deep/70 pt-1',
+                  rowValue: 'font-playfulBody text-sm text-play-deep leading-snug',
+                  noteText: 'font-playfulBody italic text-xs text-play-deep/60 mt-1.5',
+                  tooltip: 'bg-play-deep text-white',
+                  infoDot: 'border-play-deep/50 text-play-deep/80',
+                }}
+              />
             </section>
           </>
         )}
